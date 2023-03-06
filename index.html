@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Geometry Genius</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.50.1/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="js/app.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <div class="m-5">
+      <div class="navbar bg-teal-100 p-3 rounded-lg">
+        <div class="navbar-start">
+          <div>
+            <h2 class="text-xl font-bold px-3">Interactive</h2>
+            <h2 class="text-xl font-semibold px-3">Geometry Genius</h2>
+
+          </div>
+
+        </div>
+
+        <div class="navbar-end">
+          <a href="blog.html" class="btn btn-info px-12 text-white font-bold">Blog</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="lg:px-12 flex flex-col md:flex-row lg:flex-row">
+      <div class=" w-full md:w-[60%] lg:w-[70%] mt-5 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Triangle card  -->
+        <div onmouseenter="randomColor(this)" onmouseleave="normalColor(this)"
+          class="card card-compact w-full bg-base-100 shadow-xl">
+          <figure class="px-10 pt-10">
+            <img class="w-4/5 h-40" src="images/triangle.png" alt="Triangle" />
+          </figure>
+          <div class="card-body items-center text-center">
+            <h2 class="card-title text-center">Triangle</h2>
+            <p>
+              Area (A) = 0.5 x b x h
+            </p>
+            <div class="grid grid-cols-4 ml-4 items-center ">
+
+              <input type="text" id="triangle-base" placeholder="b" class="input input-bordered w-auto max-w-xs" />
+              <label for="triangle-base">cm</label>
+              <input type="text" id="triangle-height" placeholder="h" class="input input-bordered w-auto max-w-xs" />
+              <label for="triangle-height">cm</label>
+
+
+            </div>
+
+
+            <div class="card-actions mt-5">
+              <button class="btn btn-info px-10 text-white" id="triangle-btn">
+                Calculate
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rectangle card  -->
+        <div onmouseenter="randomColor(this)" onmouseleave="normalColor(this)"
+          class="card card-compact w-full bg-base-100 shadow-xl">
+          <figure class="px-10 pt-10">
+            <img class="w-4/5 h-40" src="images/rectangle.png" alt="rectangle" />
+          </figure>
+          <div class="card-body items-center text-center">
+            <h2 class="card-title text-center">Rectangle</h2>
+            <p>
+              Area (A) = w x l
+            </p>
+            <div class="grid grid-cols-4 ml-4 items-center ">
+
+              <input type="text" id="rectangle-width" placeholder="w" class="input input-bordered w-auto max-w-xs" />
+              <label for="rectangle-width">cm</label>
+              <input type="text" id="rectangle-length" placeholder="l" class="input input-bordered w-auto max-w-xs" />
+              <label for="rectangle-length">cm</label>
+
+
+            </div>
+
+
+            <div class="card-actions mt-5">
+              <button class="btn btn-info px-10 text-white" id="rectangle-btn">
+                Calculate
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Parallelogram card  -->
+        <div onmouseenter="randomColor(this)" onmouseleave="normalColor(this)"
+          class="card card-compact w-full bg-base-100 shadow-xl">
+          <figure class="px-10 pt-10">
+            <img class="w-4/5 h-40" src="images/parallelogram.png" alt="parallelogram" />
+          </figure>
+          <div class="card-body items-center text-center">
+            <h2 class="card-title text-center" id="first-name">Parallelogram</h2>
+            <p>
+              Area (A) = b x h
+            </p>
+            <div class="grid grid-cols-4 ml-4 items-center ">
+
+              <input type="text" id="parallelogram-base" placeholder="b" class="input input-bordered w-auto max-w-xs" />
+              <label for="parallelogram-base">cm</label>
+              <input type="text" id="parallelogram-height" placeholder="h"
+                class="input input-bordered w-auto max-w-xs" />
+              <label for="parallelogram-height">cm</label>
+
+
+            </div>
+
+
+            <div class="card-actions mt-5">
+              <button class="btn btn-info px-10 text-white" id="parallelogram-btn">
+                Calculate
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rhombus card  -->
+        <div onmouseenter="randomColor(this)" onmouseleave="normalColor(this)"
+          class="card card-compact w-full bg-base-100 shadow-xl">
+          <figure class="px-10 pt-10">
+            <img class="w-4/5 h-40" src="images/rhombus.png" alt="Rhombus" />
+          </figure>
+          <div class="card-body items-center text-center">
+            <h2 class="card-title text-center" id="first-name">Rhombus</h2>
+            <p>
+              Area (A) = 0.5 x d<sub>1</sub> x d<sub>2</sub>
+            </p>
+            <div class="grid grid-cols-4 ml-4 items-center ">
+
+              <input type="text" id="rhombus-diagonal-1" placeholder="d-1"
+                class="input input-bordered w-auto max-w-xs" />
+              <label for="rhombus-diagonal-1">cm</label>
+              <input type="text" id="rhombus-diagonal-2" placeholder="d-2"
+                class="input input-bordered w-auto max-w-xs" />
+              <label for="rhombus-diagonal-2">cm</label>
+
+
+            </div>
+
+
+            <div class="card-actions mt-5">
+              <button class="btn btn-info px-10 text-white" id="rhombus-btn">
+                Calculate
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pentagon card  -->
+        <div onmouseenter="randomColor(this)" onmouseleave="normalColor(this)"
+          class="card card-compact w-full bg-base-100 shadow-xl">
+          <figure class="px-10 pt-10">
+            <img class="w-4/5 h-40" src="images/pentagon.png" alt="Pentagon" />
+          </figure>
+          <div class="card-body items-center text-center">
+            <h2 class="card-title text-center" id="first-name">Pentagon</h2>
+            <p>
+              Area (A) = 0.5 x p x b
+            </p>
+            <div class="grid grid-cols-4 ml-4 items-center ">
+
+              <input type="text" id="pentagon-perimeter" placeholder="p" class="input input-bordered w-auto max-w-xs" />
+              <label for="pentagon-perimeter">cm</label>
+              <input type="text" id="pentagon-base" placeholder="b" class="input input-bordered w-auto max-w-xs" />
+              <label for="pentagon-base">cm</label>
+
+
+            </div>
+
+
+            <div class="card-actions mt-5">
+              <button class="btn btn-info px-10 text-white" id="pentagon-btn">
+                Calculate
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Ellipse card  -->
+        <div onmouseenter="randomColor(this)" onmouseleave="normalColor(this)"
+          class="card card-compact w-full bg-base-100 shadow-xl">
+          <figure class="px-10 pt-10">
+            <img class="w-4/5 h-40" src="images/ellipse.png" alt="Ellipse" />
+          </figure>
+          <div class="card-body items-center text-center">
+            <h2 class="card-title text-center" id="">Ellipse</h2>
+            <p>
+              Area (A) = πab
+            </p>
+            <div class="grid grid-cols-4 ml-4 items-center ">
+
+              <input type="text" id="ellipse-axis-a" placeholder="a" class="input input-bordered w-auto max-w-xs" />
+              <label for="ellipse-axis-a">cm</label>
+              <input type="text" id="ellipse-axis-b" placeholder="b" class="input input-bordered w-auto max-w-xs" />
+              <label for="ellipse-axis-b">cm</label>
+
+
+            </div>
+
+
+            <div class="card-actions mt-5">
+              <button class="btn btn-info px-10 text-white" id="ellipse-btn">
+                Calculate
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- cart details div  -->
+      <div class="ml-4 w-full md:w-[40%] lg:w-[30%] mx-auto bg-base-100 shadow-xl h-fit">
+        <h1 class="text-3xl text-center underline font-bold mt-7 mb-7">
+          Area Calculation
+        </h1>
+        <div class="overflow-x-auto">
+          <table class="table w-full">
+           
+            <tbody id="table-container">
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+</body>
+
+</html>
